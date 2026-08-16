@@ -1,108 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Overview · Sarfraz Ahmad</title>
-    <link rel="preload" href="styles.css" as="style" />
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="description" content="NLP Researcher & Data Scientist" />
-  </head>
-  <body>
-    <!-- NAV -->
-    <div class="nav">
-      <div class="nav-inner container">
-        <div class="brand">Sarfraz Ahmad</div>
-        <div class="spacer"></div>
-        <a data-nav href="index.html">Overview</a>
-        <a data-nav href="experience.html">Experience</a>
-        <a data-nav href="projects.html">Projects</a>
-        <a data-nav href="publications.html">Publications</a>
-        <a data-nav href="education.html">Education</a>
-        <a data-nav href="skills.html">Skills</a>
-        <a data-nav href="reach.html">Reach</a>
-        <a class="btn" href="assets/Sarfraz_Ahmad.pdf" download>Download CV</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarfraz Ahmad — NLP Researcher & Data Scientist</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+
+  <!-- ─── CURSOR ─────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ─── LOADER ────────────────────────────── -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-text">SA</div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
+
+  <!-- ─── NAV ───────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-logo">SA</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="assets/Sarfraz_Ahmad.pdf" class="btn-resume" target="_blank">
+      <i class="fa-solid fa-file-arrow-down"></i> Resume
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#publications" class="mobile-link">Research</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ─── HERO ──────────────────────────────── -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-greeting" data-aos="fade-up" data-aos-delay="100">
+          <span class="greeting-line"></span>
+          Hello, I'm
+        </div>
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200">Sarfraz Ahmad</h1>
+        <div class="hero-roles" data-aos="fade-up" data-aos-delay="300">
+          <span class="role-prefix">I'm a </span>
+          <span class="typed-text" id="typedText"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-bio" data-aos="fade-up" data-aos-delay="400">
+          NLP Researcher at MBZUAI · Specializing in LLMs, fact-checking &amp; reasoning ·
+          5 years building AI solutions that matter.
+        </p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-secondary">Get In Touch</a>
+        </div>
+        <div class="hero-socials" data-aos="fade-up" data-aos-delay="600">
+          <a href="https://github.com/SarfrazAhmad307" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/sarfraz-ahmad" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:sarfraz.ahmad@mbzuai.ac.ae" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+        <div class="image-ring">
+          <div class="image-ring-inner">
+            <img src="assets/profile.jpg" alt="Sarfraz Ahmad" class="profile-img" />
+          </div>
+        </div>
+        <div class="floating-badge badge-nlp">NLP</div>
+        <div class="floating-badge badge-llm">LLM</div>
+        <div class="floating-badge badge-ai">AI</div>
       </div>
     </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
 
-    <!-- 🔽 START DIRECTLY WITH THE HERO (no page header) -->
-    <section class="container hero-band">
-      <div class="hero-unit">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 class="hero-title">Sarfraz Ahmad</h1>
-            <p class="hero-role">MS Student at MBZUAI</p>
-            <p class="hero-lead">
-              Researching LLM reasoning, evaluation, and multilingual NLP.<br />
-              Building practical systems that bridge research and production.
-            </p>
+  <!-- ─── ABOUT ─────────────────────────────── -->
+  <section class="about section-pad" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">01. About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <p>I'm a dedicated <strong>Natural Language Processing researcher</strong> and data scientist with 5 years of hands-on experience in AI, machine learning, and NLP-driven research. Currently pursuing my M.S. in NLP at <strong>Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</strong> in Abu Dhabi with a GPA of 3.83.</p>
+          <p>My research focuses on <strong>fact-checking</strong>, <strong>temporal reasoning</strong>, and <strong>spatial reasoning</strong> — areas where I believe AI can have a transformative real-world impact. I'm passionate about pushing the boundaries of what LLMs can understand and reason about.</p>
+          <p>Beyond research, I have extensive industry experience building scalable data pipelines, AI systems, and full-stack applications that have served enterprise clients across the US and UAE.</p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="15">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="12">0</span>
+              <span class="stat-suffix"></span>
+              <span class="stat-label">Publications</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="383">0</span>
+              <span class="stat-suffix">/400</span>
+              <span class="stat-label">MBZUAI GPA</span>
+            </div>
           </div>
-
-          <div class="hero-media">
-            <!-- Keep your photo at this path or update src -->
-            <img class="hero-square" src="assets/profile.jpg" alt="Sarfraz Ahmad" />
+        </div>
+        <div class="about-education" data-aos="fade-left">
+          <h3>Education</h3>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="edu-info">
+              <h4>M.S. Natural Language Processing</h4>
+              <p class="edu-school">Mohamed bin Zayed University of AI (MBZUAI)</p>
+              <p class="edu-meta"><i class="fa-solid fa-location-dot"></i> Abu Dhabi, UAE &nbsp;|&nbsp; <i class="fa-solid fa-calendar"></i> 2024 – 2026</p>
+              <span class="edu-badge">GPA: 3.83 / 4.00</span>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="edu-info">
+              <h4>B.S. Electrical Engineering (CS Major)</h4>
+              <p class="edu-school">University of Engineering & Technology (UET)</p>
+              <p class="edu-meta"><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan &nbsp;|&nbsp; <i class="fa-solid fa-calendar"></i> 2016 – 2020</p>
+              <span class="edu-badge">GPA: 3.49 / 4.00</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- STACKED SECTIONS -->
-    <main class="container section stack">
-      <section class="card">
-        <h3>About</h3>
-        <p>
-          I'm Sarfraz Ahmad, an NLP researcher and data scientist focused on
-          LLM reasoning (factual, temporal, spatial) and production-grade ML systems.
-        </p>
-        <p class="meta">
-          Based in UAE. Email:
-          <a href="mailto:sarfraz.ahmad@mbzuai.ac.ae">sarfraz.ahmad@mbzuai.ac.ae</a>
-        </p>
-      </section>
-
-      <section class="card">
-        <h3>Highlights</h3>
-        <ul class="list">
-          <li>
-            EMNLP 2025 Demo: <strong>UrduFactCheck</strong>
-            (Agentic fact-checking with evidence boosting).
-          </li>
-          <li>
-            Organizer & Contributor:
-            <strong>ImageCLEF 2025 Multimodal Reasoning</strong>.
-          </li>
-          <li>MS in NLP @ MBZUAI (GPA 3.83/4.00).</li>
-          <li>Lead Data Scientist @ Prognos Health (via GoPython LLC).</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Quick Links</h3>
-        <p class="meta">
-          GitHub:
-          <a href="https://github.com/SarfrazAhmad307">@SarfrazAhmad307</a><br />
-          Email:
-          <a href="mailto:sarfraz.ahmad@mbzuai.ac.ae">sarfraz.ahmad@mbzuai.ac.ae</a><br />
-          Phone: +971-50-3074959
-        </p>
-        <p class="meta">
-          Explore:
-          <a href="experience.html">Experience</a> ·
-          <a href="projects.html">Projects</a> ·
-          <a href="publications.html">Publications</a> ·
-          <a href="education.html">Education</a> ·
-          <a href="skills.html">Skills</a>
-        </p>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      © <span id="year"></span> Sarfraz Ahmad · Built with hand-rolled HTML/CSS · Hosted on GitHub Pages
-      <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-      <a id="toTop" href="#" style="display:inline-block;margin-left:12px;opacity:0;transition:.2s">Back to top ↑</a>
     </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- ─── EXPERIENCE ────────────────────────── -->
+  <section class="experience section-pad" id="experience">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">02. Experience</span>
+        <h2 class="section-title">Where I've Worked</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Lead Data Scientist</h3>
+                <p class="tl-company"><i class="fa-solid fa-building"></i> GoPython Software Solutions → <strong>Prognos Health Inc</strong></p>
+                <p class="tl-meta"><i class="fa-solid fa-location-dot"></i> Chatham, NJ, USA &nbsp;|&nbsp; <i class="fa-solid fa-calendar"></i> Jun 2021 – Sep 2024</p>
+              </div>
+              <div class="tl-duration">3 yrs 4 mo</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Developed automated data transformation pipelines delivering critical insights on large-scale healthcare datasets.</li>
+              <li>Led migration of the organization's data ingestion system to an advanced pipeline, drastically improving processing capabilities.</li>
+              <li>Redefined client data schema to align with the <strong>OMOP Common Data Model</strong> standard for interoperability.</li>
+              <li>Built automated frameworks using <strong>AWS Lambda</strong> for managing large volumes of web files via scraping.</li>
+              <li>Created a query handler using <strong>Fluent Interface architecture</strong> in Python, streamlining complex query processes.</li>
+            </ul>
+            <div class="tl-tags">
+              <span>Python</span><span>AWS Lambda</span><span>OMOP CDM</span><span>Data Pipelines</span><span>Healthcare AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Front-End Developer</h3>
+                <p class="tl-company"><i class="fa-solid fa-building"></i> GoPython Software Solutions → <strong>Instant Labs Inc</strong></p>
+                <p class="tl-meta"><i class="fa-solid fa-location-dot"></i> Chatham, NJ, USA &nbsp;|&nbsp; <i class="fa-solid fa-calendar"></i> Nov 2020 – May 2021</p>
+              </div>
+              <div class="tl-duration">7 mo</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Built a drag-and-drop web app with <strong>React.js</strong> for creating and visualizing complex database schemas.</li>
+              <li>Designed a web tool using <strong>Blockly + React.js</strong> that dynamically generated and executed SQL queries at runtime.</li>
+              <li>Engineered backend RESTful APIs in <strong>Go</strong> for seamless frontend-backend integration.</li>
+            </ul>
+            <div class="tl-tags">
+              <span>React.js</span><span>Go</span><span>Blockly</span><span>RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Research Officer</h3>
+                <p class="tl-company"><i class="fa-solid fa-building"></i> Data Science Lab, Al-Khawarizmi Institute of Computer Science</p>
+                <p class="tl-meta"><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan &nbsp;|&nbsp; <i class="fa-solid fa-calendar"></i> Jan 2020 – Sep 2020</p>
+              </div>
+              <div class="tl-duration">9 mo</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Developed advanced <strong>Explainability & Interpretability</strong> models for AI systems, improving transparency in decision-making.</li>
+              <li>Automated clinical coding processes with ML models, increasing coding accuracy and efficiency.</li>
+              <li>Implemented PSO, PCA, and SVD algorithms to enhance model performance and reduce computational complexity.</li>
+            </ul>
+            <div class="tl-tags">
+              <span>XAI</span><span>Clinical NLP</span><span>PSO</span><span>PCA</span><span>SVD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Research Intern</h3>
+                <p class="tl-company"><i class="fa-solid fa-building"></i> Data Science Lab, KICS &amp; Sabz Qalam</p>
+                <p class="tl-meta"><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan &nbsp;|&nbsp; <i class="fa-solid fa-calendar"></i> Oct 2019 – Jun 2020</p>
+              </div>
+              <div class="tl-duration">~9 mo</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Explored NLP libraries (NLTK, SpaCy), word embeddings (Word2Vec, GloVe) and deep learning frameworks.</li>
+              <li>Published a peer-reviewed research article on Metabolic Syndrome; contributed to research on Metastatic Breast Cancer and Uveal Melanoma.</li>
+            </ul>
+            <div class="tl-tags">
+              <span>NLP</span><span>PyTorch</span><span>TensorFlow</span><span>Medical Research</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PUBLICATIONS ──────────────────────── -->
+  <section class="publications section-pad" id="publications">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">03. Research</span>
+        <h2 class="section-title">Publications</h2>
+      </div>
+      <!-- Year group: 2026 -->
+      <div class="pub-year-group" data-aos="fade-up">
+        <div class="pub-year-label"><span>2026</span></div>
+        <div class="pub-grid">
+
+          <div class="pub-card" data-aos="fade-up">
+            <div class="pub-type-badge">Conference · ACL'26</div>
+            <div class="pub-icon"><i class="fa-solid fa-table-columns"></i></div>
+            <h3>TABVERSE: Benchmarking Cross-Format Table Understanding in LLMs and VLMs</h3>
+            <p class="pub-authors">Ahsan, M., <strong>Ahmad, S.</strong>, Hee, M.S., Lee, R.K.W. &amp; Nakov, P.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> arXiv preprint · Annual Meeting of the ACL 2026.</p>
+            <div class="pub-tags"><span>Table Understanding</span><span>LLMs</span><span>VLMs</span><span>Benchmarking</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="60">
+            <div class="pub-type-badge">Conference · ACL'26</div>
+            <div class="pub-icon"><i class="fa-solid fa-mosque"></i></div>
+            <h3>SAHM: A Benchmark for Arabic Financial and Shari'ah-Compliant Reasoning</h3>
+            <p class="pub-authors">Elbadry, R., <strong>Ahmad, S.</strong>, Heakl, A., Bouch, D., et al.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> Annual Meeting of the Association for Computational Linguistics 2026.</p>
+            <div class="pub-tags"><span>Arabic NLP</span><span>Financial Reasoning</span><span>Benchmarking</span><span>LLMs</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="pub-type-badge">Preprint · arXiv'26</div>
+            <div class="pub-icon"><i class="fa-solid fa-language"></i></div>
+            <h3>UrduMMLU: A Massive Multitask Benchmark for Urdu Language Understanding</h3>
+            <p class="pub-authors">Tabassum, A., <strong>Ahmad, S.</strong>, Iqbal, H., Aijaz, O., Ahsan, M. &amp; Nakov, P.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> arXiv preprint, 2026.</p>
+            <div class="pub-tags"><span>Urdu NLP</span><span>MMLU</span><span>Benchmarking</span><span>LLMs</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="180">
+            <div class="pub-type-badge">Conference · ACL'26</div>
+            <div class="pub-icon"><i class="fa-solid fa-earth-asia"></i></div>
+            <h3>Cultural Benchmarking of LLMs in Standard and Dialectal Arabic Dialogues</h3>
+            <p class="pub-authors">Al Kautsar, M.D., Almheiri, S., Ahsan, M., Elbouardi, B., <strong>Ahmad, S.</strong>, et al.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> Annual Meeting of the Association for Computational Linguistics 2026.</p>
+            <div class="pub-tags"><span>Arabic Dialects</span><span>Cultural NLP</span><span>LLMs</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="pub-type-badge">Preprint · arXiv'26</div>
+            <div class="pub-icon"><i class="fa-solid fa-images"></i></div>
+            <h3>A Parallel Cross-Lingual Benchmark for Multimodal Idiomaticity Understanding</h3>
+            <p class="pub-authors">Torunouglu-Selamet, D., Arslan, D., <strong>Ahmad, S.</strong>, et al. (56 collaborators)</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> arXiv preprint, 2026.</p>
+            <div class="pub-tags"><span>Multimodal</span><span>Idiomaticity</span><span>Cross-lingual</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="pub-type-badge">Conference · ECIR'26</div>
+            <div class="pub-icon"><i class="fa-solid fa-image"></i></div>
+            <h3>ImageCLEF 2026: Multimodal Challenges in Medicine, Science, Agritech, and Security</h3>
+            <p class="pub-authors">Ionescu, B., Müller, H., Stanciu, D.C., <strong>Ahmad, S.</strong>, et al. (48 collaborators)</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> European Conference on Information Retrieval (ECIR) 2026.</p>
+            <div class="pub-tags"><span>ImageCLEF</span><span>Multimodal</span><span>Benchmarking</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Year group: 2025 -->
+      <div class="pub-year-group" data-aos="fade-up">
+        <div class="pub-year-label"><span>2025</span></div>
+        <div class="pub-grid">
+
+          <div class="pub-card featured" data-aos="fade-up">
+            <div class="pub-type-badge">Conference · EMNLP'25</div>
+            <div class="pub-icon"><i class="fa-solid fa-check-double"></i></div>
+            <h3>UrduFactCheck: An Agentic Fact-Checking Framework for Urdu with Evidence Boosting and Benchmarking</h3>
+            <p class="pub-authors"><strong>Ahmad, S.*</strong>, Iqbal, H.*, Ahsan, M., Naeem, N., Khan, M.A.R., Riaz, A., Manzoor, M.A., Wang, Y. &amp; Nakov, P.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> Findings of ACL: EMNLP 2025 — Suzhou, China.</p>
+            <div class="pub-links">
+              <a href="https://aclanthology.org/2025.findings-emnlp.1240/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> ACL Anthology</a>
+              <a href="https://arxiv.org/abs/2505.15063" target="_blank"><i class="fa-solid fa-file-lines"></i> arXiv</a>
+            </div>
+            <div class="pub-tags"><span>Fact-Checking</span><span>Urdu NLP</span><span>Agentic AI</span><span>LLMs</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="pub-type-badge journal">Journal · JMB'25</div>
+            <div class="pub-icon"><i class="fa-solid fa-dna"></i></div>
+            <h3>iBitter-Stack: A Multi-Representation Ensemble Learning Model for Accurate Bitter Peptide Identification</h3>
+            <p class="pub-authors"><strong>Ahmad, S.</strong>, Ahsan, M., Asim, M., Dengel, A. &amp; Malik, M.I.</p>
+            <p class="pub-venue"><i class="fa-solid fa-book"></i> Journal of Molecular Biology, 2025.</p>
+            <div class="pub-tags"><span>Bioinformatics</span><span>Peptide Classification</span><span>Ensemble Learning</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="pub-type-badge">Workshop · BEA'25 @ ACL</div>
+            <div class="pub-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>NeuralNexus at BEA 2025 Shared Task: Retrieval-Augmented Prompting for Mistake Identification in AI Tutors</h3>
+            <p class="pub-authors">Naeem, N., <strong>Ahmad, S.</strong>, Ahsan, M. &amp; Iqbal, H.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025).</p>
+            <div class="pub-links">
+              <a href="https://aclanthology.org/2025.bea-1.0.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Proceedings</a>
+            </div>
+            <div class="pub-tags"><span>RAG</span><span>Educational NLP</span><span>AI Tutors</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="pub-type-badge">Overview · CLEF'25</div>
+            <div class="pub-icon"><i class="fa-solid fa-image"></i></div>
+            <h3>Overview of ImageCLEF 2025 — Multimodal Reasoning</h3>
+            <p class="pub-authors">Dimitrov, D., Hee, M.S., Xie, Z., Das, R.J., <strong>Ahmad, S.</strong>, et al.</p>
+            <p class="pub-venue"><i class="fa-solid fa-map-marker-alt"></i> Conference and Labs of the Evaluation Forum (CLEF) 2025.</p>
+            <div class="pub-tags"><span>ImageCLEF</span><span>Multimodal Reasoning</span><span>Low-resource NLP</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Year group: 2023 & earlier -->
+      <div class="pub-year-group" data-aos="fade-up">
+        <div class="pub-year-label"><span>2023 &amp; Earlier</span></div>
+        <div class="pub-grid">
+
+          <div class="pub-card" data-aos="fade-up">
+            <div class="pub-type-badge journal">Journal · CCADD'23</div>
+            <div class="pub-icon"><i class="fa-solid fa-capsules"></i></div>
+            <h3>Unearthing Insights into Metabolic Syndrome by Linking Drugs, Targets, and Gene Expressions Using Similarity Measures and Graph Theory</h3>
+            <p class="pub-authors">Zafar, A., Wajid, B., Shabbir, A., Awan, F.G., Ahsan, M., <strong>Ahmad, S.</strong>, Wajid, I., Anwar, F. &amp; Mazhar, F.</p>
+            <p class="pub-venue"><i class="fa-solid fa-book"></i> Current Computer-Aided Drug Design, Vol. 20, Issue 6, pp. 773–783. DOI: 10.2174/1573409920666230817101913</p>
+            <div class="pub-tags"><span>Metabolic Syndrome</span><span>Graph Theory</span><span>Drug Discovery</span></div>
+          </div>
+
+          <div class="pub-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="pub-type-badge book">Book</div>
+            <div class="pub-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Linux Programming for the Faint of Heart</h3>
+            <p class="pub-authors">Sobahi, N., Al-Rashed, F., Shabbir, A., <strong>Ahmad, S.</strong>, Jamil, M. &amp; Wajid, B.</p>
+            <p class="pub-venue"><i class="fa-solid fa-book"></i> Sabz Qalam, Vol. 1, p. 167. ISBN: 978-969-7941-00-1</p>
+            <div class="pub-tags"><span>Linux</span><span>Systems Programming</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ──────────────────────────── -->
+  <section class="projects section-pad" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">04. Projects</span>
+        <h2 class="section-title">Things I've Built</h2>
+      </div>
+
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nlp">NLP / LLM</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="data">Data Science</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card" data-category="nlp" data-aos="fade-up">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="project-links">
+              <a href="#" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3>ImageCLEF 2025: Multimodal Reasoning</h3>
+          <p>Curated a high-quality Urdu MCQ image dataset for multimodal reasoning. Developed baselines using VLMs and LLMs for cross-modal understanding in low-resource languages.</p>
+          <div class="project-tags"><span>VLMs</span><span>LLMs</span><span>Multimodal</span><span>Urdu NLP</span></div>
+          <div class="project-meta">Organizer & Contributor · ImageCLEF 2025</div>
+        </div>
+
+        <div class="project-card featured-project" data-category="nlp" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-check-double"></i></div>
+            <div class="project-links">
+              <span class="proj-star"><i class="fa-solid fa-star"></i> Featured</span>
+            </div>
+          </div>
+          <h3>UrduFactCheck Framework</h3>
+          <p>Agentic fact-checking framework for Urdu with evidence boosting, benchmarking, and LLM integration — accepted at EMNLP 2025.</p>
+          <div class="project-tags"><span>Fact-Checking</span><span>Urdu</span><span>Agentic AI</span><span>EMNLP</span></div>
+          <div class="project-meta">Research Project · MBZUAI</div>
+        </div>
+
+        <div class="project-card" data-category="nlp" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>LLM-based Structured Text Evaluation</h3>
+          <p>Investigated limitations of ROUGE/entity metrics. Proposed structure-aware LLM evaluation at node, argument, and claim levels for long-form AI-generated content.</p>
+          <div class="project-tags"><span>LLM</span><span>Evaluation</span><span>ROUGE</span><span>Structured Text</span></div>
+          <div class="project-meta">Semester Project · MBZUAI 2025</div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-virus"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>COVID-19 Severity Classification via scRNA-seq</h3>
+          <p>ML pipeline leveraging single-cell RNA sequencing data to classify COVID-19 severity. Used PCA + SVM; identified gene biomarkers (RSAD2, CXCL10, S100A8) via SHAP.</p>
+          <div class="project-tags"><span>scRNA-seq</span><span>SVM</span><span>SHAP</span><span>Bioinformatics</span></div>
+          <div class="project-meta">Semester Project · MBZUAI 2025</div>
+        </div>
+
+        <div class="project-card" data-category="nlp" data-aos="fade-up">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-language"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>Multilingual Hate Speech Detection</h3>
+          <p>Evaluated hate speech detection in German, Hindi, and English using traditional ML and advanced LLMs, demonstrating LLM superiority in low-resource multilingual settings.</p>
+          <div class="project-tags"><span>LLMs</span><span>Hate Speech</span><span>Multilingual</span><span>NLP</span></div>
+          <div class="project-meta">Semester Project · MBZUAI 2024</div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-microscope"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>Peptide Classification with LLM Embeddings</h3>
+          <p>Ensemble of LLM embeddings and CNNs for peptide classification, achieving state-of-the-art results for Anti-Viral Peptides without handcrafted features.</p>
+          <div class="project-tags"><span>CNN</span><span>LLM Embeddings</span><span>Bioinformatics</span></div>
+          <div class="project-meta">Semester Project · MBZUAI 2024</div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-aos="fade-up">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-ribbon"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>Breast Cancer Histopathology Classification</h3>
+          <p>Transfer learning with DenseNet-201 for binary classification of histopathology images, achieving ~87% accuracy across multiple magnification levels.</p>
+          <div class="project-tags"><span>DenseNet-201</span><span>Transfer Learning</span><span>Medical Imaging</span></div>
+          <div class="project-meta">Freelance · 2022</div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>Multi-Label Emotion Classification</h3>
+          <p>Evaluated 8 ML + 3 DL algorithms for multi-label emotion classification. Custom BERT with RoBERTa embeddings achieved macro F1 of 0.73 on Go-Emotions Dataset.</p>
+          <div class="project-tags"><span>BERT</span><span>RoBERTa</span><span>Emotion Detection</span></div>
+          <div class="project-meta">Freelance · 2021</div>
+        </div>
+
+        <div class="project-card" data-category="data" data-aos="fade-up">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-earth-americas"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>COVID-19 Exploratory Data Analysis</h3>
+          <p>Cleaned and analyzed global COVID-19 data. Created interactive graphs and 3D geo-scatter plots to visualize global spread patterns over time.</p>
+          <div class="project-tags"><span>Pandas</span><span>Seaborn</span><span>EDA</span><span>Plotly</span></div>
+          <div class="project-meta">Freelance · 2021</div>
+        </div>
+
+        <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-database"></i></div>
+            <div class="project-links"></div>
+          </div>
+          <h3>Drag-and-Drop DB Schema Builder</h3>
+          <p>React.js web app enabling users to visually create and connect complex database schemas. Paired with a Blockly-based tool generating SQL queries dynamically at runtime.</p>
+          <div class="project-tags"><span>React.js</span><span>Blockly</span><span>Go</span><span>SQL</span></div>
+          <div class="project-meta">Instant Labs Inc · 2020–2021</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ────────────────────────────── -->
+  <section class="skills section-pad" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">05. Skills</span>
+        <h2 class="section-title">What I Work With</h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category" data-aos="fade-up">
+          <div class="skill-cat-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Programming</h3>
+          <div class="skill-pills">
+            <span class="pill">Python</span><span class="pill">C++</span><span class="pill">JavaScript</span>
+            <span class="pill">Go</span><span class="pill">Java</span><span class="pill">Scala</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="50">
+          <div class="skill-cat-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3>AI / ML / NLP</h3>
+          <div class="skill-pills">
+            <span class="pill">PyTorch</span><span class="pill">TensorFlow</span><span class="pill">Transformers</span>
+            <span class="pill">Scikit-learn</span><span class="pill">Keras</span><span class="pill">OpenCV</span>
+            <span class="pill">NLTK</span><span class="pill">SpaCy</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-cat-icon"><i class="fa-brands fa-aws"></i></div>
+          <h3>Cloud & DevOps</h3>
+          <div class="skill-pills">
+            <span class="pill">AWS</span><span class="pill">Azure</span><span class="pill">Docker</span>
+            <span class="pill">Kubernetes</span><span class="pill">Terraform</span><span class="pill">Databricks</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-cat-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3>Web Technologies</h3>
+          <div class="skill-pills">
+            <span class="pill">React</span><span class="pill">Angular</span><span class="pill">Vue 3</span>
+            <span class="pill">Node.js</span><span class="pill">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-cat-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Data & Databases</h3>
+          <div class="skill-pills">
+            <span class="pill">PostgreSQL</span><span class="pill">MySQL</span><span class="pill">MongoDB</span>
+            <span class="pill">Apache Spark</span><span class="pill">Pandas</span><span class="pill">NumPy</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="250">
+          <div class="skill-cat-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3>Research</h3>
+          <div class="skill-pills">
+            <span class="pill">LLMs</span><span class="pill">Fact-Checking</span><span class="pill">Temporal Reasoning</span>
+            <span class="pill">XAI</span><span class="pill">Data Analysis</span><span class="pill">Academic Writing</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Domain Expertise Cards -->
+      <div class="domain-cards" data-aos="fade-up">
+        <h3 class="domain-heading">Domain Expertise</h3>
+        <div class="domain-grid">
+
+          <div class="domain-card">
+            <div class="domain-icon-wrap" style="--clr:#00d9c0">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="domain-body">
+              <h4>NLP &amp; Large Language Models</h4>
+              <p>Fact-checking, temporal &amp; spatial reasoning, multilingual benchmarking, agentic pipelines, and evaluation frameworks for LLMs.</p>
+              <div class="domain-metrics">
+                <div class="dm"><span class="dm-val">5+</span><span class="dm-lbl">Years</span></div>
+                <div class="dm"><span class="dm-val">12</span><span class="dm-lbl">Publications</span></div>
+                <div class="dm"><span class="dm-val">8+</span><span class="dm-lbl">NLP Projects</span></div>
+              </div>
+              <div class="domain-tools">
+                <span>HuggingFace</span><span>PyTorch</span><span>NLTK</span><span>SpaCy</span><span>vLLM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-icon-wrap" style="--clr:#7c6fff">
+              <i class="fa-solid fa-pipeline"></i>
+            </div>
+            <div class="domain-body">
+              <h4>Data Engineering &amp; ML</h4>
+              <p>End-to-end ML pipelines, OMOP CDM data modelling, AWS-driven automation, and enterprise healthcare data systems at scale.</p>
+              <div class="domain-metrics">
+                <div class="dm"><span class="dm-val">4</span><span class="dm-lbl">Years</span></div>
+                <div class="dm"><span class="dm-val">3</span><span class="dm-lbl">Enterprise Clients</span></div>
+                <div class="dm"><span class="dm-val">10+</span><span class="dm-lbl">ML Models</span></div>
+              </div>
+              <div class="domain-tools">
+                <span>AWS Lambda</span><span>Databricks</span><span>Spark</span><span>Scikit-learn</span><span>Pandas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-icon-wrap" style="--clr:#f59e0b">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <div class="domain-body">
+              <h4>Research &amp; Benchmarking</h4>
+              <p>Designing shared tasks, curating datasets, building evaluation pipelines, and publishing in top-tier NLP venues.</p>
+              <div class="domain-metrics">
+                <div class="dm"><span class="dm-val">3</span><span class="dm-lbl">Shared Tasks</span></div>
+                <div class="dm"><span class="dm-val">ACL</span><span class="dm-lbl">EMNLP · CLEF</span></div>
+                <div class="dm"><span class="dm-val">5+</span><span class="dm-lbl">Datasets</span></div>
+              </div>
+              <div class="domain-tools">
+                <span>Experimental Design</span><span>Statistical Analysis</span><span>Academic Writing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-icon-wrap" style="--clr:#ec4899">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="domain-body">
+              <h4>Full-Stack &amp; Cloud</h4>
+              <p>React/Go web apps, RESTful APIs, Docker/Kubernetes orchestration, and cloud-native solutions across AWS and Azure.</p>
+              <div class="domain-metrics">
+                <div class="dm"><span class="dm-val">3+</span><span class="dm-lbl">Years</span></div>
+                <div class="dm"><span class="dm-val">3</span><span class="dm-lbl">Web Apps Built</span></div>
+                <div class="dm"><span class="dm-val">AWS · Azure</span><span class="dm-lbl">Cloud</span></div>
+              </div>
+              <div class="domain-tools">
+                <span>React</span><span>Go</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tech Cloud -->
+      <div class="tech-cloud" data-aos="fade-up">
+        <h3 class="domain-heading">Technologies &amp; Tools</h3>
+        <div class="tech-cloud-wrap" id="techCloud">
+          <span class="tc-tag tc-lg">Python</span>
+          <span class="tc-tag tc-lg">PyTorch</span>
+          <span class="tc-tag tc-lg">HuggingFace</span>
+          <span class="tc-tag tc-md">TensorFlow</span>
+          <span class="tc-tag tc-md">Transformers</span>
+          <span class="tc-tag tc-md">React.js</span>
+          <span class="tc-tag tc-md">AWS</span>
+          <span class="tc-tag tc-md">Docker</span>
+          <span class="tc-tag tc-sm">Go</span>
+          <span class="tc-tag tc-sm">Scikit-learn</span>
+          <span class="tc-tag tc-sm">Pandas</span>
+          <span class="tc-tag tc-sm">Apache Spark</span>
+          <span class="tc-tag tc-sm">PostgreSQL</span>
+          <span class="tc-tag tc-sm">MongoDB</span>
+          <span class="tc-tag tc-sm">Kubernetes</span>
+          <span class="tc-tag tc-sm">Terraform</span>
+          <span class="tc-tag tc-sm">Azure</span>
+          <span class="tc-tag tc-sm">NLTK</span>
+          <span class="tc-tag tc-sm">SpaCy</span>
+          <span class="tc-tag tc-sm">Databricks</span>
+          <span class="tc-tag tc-sm">OpenCV</span>
+          <span class="tc-tag tc-sm">Node.js</span>
+          <span class="tc-tag tc-sm">Git</span>
+          <span class="tc-tag tc-sm">Tableau</span>
+          <span class="tc-tag tc-sm">MATLAB</span>
+          <span class="tc-tag tc-sm">C++</span>
+          <span class="tc-tag tc-sm">JavaScript</span>
+          <span class="tc-tag tc-sm">Scala</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ───────────────────────────── -->
+  <section class="contact section-pad" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">06. Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-text" data-aos="fade-right">
+          <p>I'm always open to discussing new research opportunities, collaborations, or interesting projects in NLP and AI. Whether you have a question or just want to say hello, my inbox is always open.</p>
+          <div class="contact-info-items">
+            <div class="contact-info-item">
+              <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <a href="mailto:sarfraz.ahmad@mbzuai.ac.ae">sarfraz.ahmad@mbzuai.ac.ae</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <a href="tel:+971503074959">+971 50 307 4959</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="ci-label">Location</span>
+                <span>Abu Dhabi, UAE</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/SarfrazAhmad307" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/sarfraz-ahmad" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:sarfraz.ahmad@mbzuai.ac.ae"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" data-aos="fade-left">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">Designed &amp; Built by <strong>Sarfraz Ahmad</strong> · 2025</p>
+        <p class="footer-inspired">Inspired by modern research portfolios</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── BACK TO TOP ───────────────────────── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

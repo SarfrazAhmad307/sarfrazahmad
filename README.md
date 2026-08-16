@@ -1,20 +1,49 @@
-# sarfraz-website
+# Sarfraz Ahmad — Portfolio
 
-A minimalist, multi-page personal website for **Sarfraz Ahmad** with unique page names (Overview, Journey, Builds, Papers, Reach) and a distinct visual template.
+Personal portfolio website for Sarfraz Ahmad, NLP Researcher & Data Scientist.
 
-## Run locally
-Open `index.html` in your browser, or use a simple server:
+## 🚀 Live Site
 
-```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+Deploy as GitHub Pages by going to **Settings → Pages → Deploy from branch → main → / (root)**.
+
+## 🛠 Stack
+
+- Pure HTML5, CSS3, Vanilla JavaScript
+- [AOS](https://michalsnik.github.io/aos/) for scroll animations
+- [Font Awesome 6](https://fontawesome.com/) for icons
+- [Google Fonts](https://fonts.google.com/) — Inter, Space Grotesk, JetBrains Mono
+- Particle canvas animation (custom, no dependencies)
+
+## 📁 Structure
+
+```
+portfolio/
+├── index.html          # Main HTML
+├── css/
+│   └── style.css       # All styles
+├── js/
+│   └── main.js         # Interactions, animations
+├── assets/
+│   ├── profile.jpg     # Profile photo
+│   └── Sarfraz_Ahmad.pdf  # Resume
+└── README.md
 ```
 
-## Deploy on GitHub Pages
-1. Create a new repo (e.g., `sarfraz-website`), push these files.
-2. In **Settings → Pages**, set **Source** to `main` branch `/root` (or enable Pages for your repository).
-3. Your site will be published at https://<your-username>.github.io/<repo>/
+## 🎨 Features
 
----
+- Custom cursor with smooth follower
+- Loader animation
+- Particle network hero background with mouse interaction
+- Typewriter role rotation
+- Scroll-triggered animations
+- Project filtering by category
+- Animated stat counters
+- Skill bar animations
+- Responsive mobile menu
+- Dark theme with teal/cyan accent
 
-Built with plain HTML/CSS/JS (no build step) for speed and simplicity.
+## ✏️ Customization
+
+- Update social links in `index.html` (search for `github.com/SarfrazAhmad307` and LinkedIn)
+- Replace `assets/profile.jpg` with any updated photo
+- Update `assets/Sarfraz_Ahmad.pdf` when resume changes
