@@ -774,24 +774,33 @@
             <a href="mailto:sarfraz.ahmad@mbzuai.ac.ae"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
-        <form class="contact-form" id="contactForm" data-aos="fade-left">
+        <form class="contact-form" id="contactForm" data-aos="fade-left"
+              action="https://formsubmit.co/sarfraz.ahmad@mbzuai.ac.ae"
+              method="POST">
+          <!-- Formsubmit.co config -->
+          <input type="hidden" name="_subject" value="New message from your portfolio" />
+          <input type="hidden" name="_next" value="https://sarfrazahmad307.github.io/sarfrazahmad/?sent=1" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honey" style="display:none" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" placeholder="Your name" required />
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="your@email.com" required />
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" placeholder="What's this about?" />
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
           </div>
           <button type="submit" class="btn-submit">
             <span>Send Message</span>
